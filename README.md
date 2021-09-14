@@ -1,7 +1,7 @@
 # Project1 32-bit ALU
    
 ## Contributor
-Xueqian Hu NetID: 
+Xueqian Hu NetID: xh110
 Minzhi Guo NetID: mg516
    
 ## Design Description
@@ -14,7 +14,6 @@ We first designed a 1-bit full adder and used 1-bit full adders and 2to1 MUXes t
 ### Addition and Subtraction
 We used a 64to32 MUX to select whether to do addition or subtraction. The two 32-bit inputs were operand B and (operand B)', the select input was 0 (addtion) or 1 (subtraction), which wasalso the carry in of the 32-bit CSA.
 ### Overflow
-We used CO and CI to just if overflow happen. When CI XOR CO is false, overflow happens.
-   
+When we builded the 2-bit CSA, we add an output wire leading the first full adder's cout which is also the second full adder's cin. So when we builded the 4-bit CSA we could get the cin of the last full adder. And so on, when we builded the 32-bit CSA, it could have a wire leading the last full adder's cin. Here, we named the last full adder's cin CI and named its cout CO. We used CO and CI to just if overflow happen. When CI XOR CO is false, overflow happens.
 ## Issues
 When testing by the Gate Level Simulation, we found our ALU was not fast enough. At first it worked well, but with gate delay accummulating, it spent more than 20ns in generating the final result, so there were errors when tesing with a slow module. Maybe we should use CLAs to do the caculation.
