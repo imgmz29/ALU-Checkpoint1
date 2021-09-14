@@ -12,7 +12,7 @@ We first designed a 2to1 MUX. Then we expanded the number of 2to1 MUXes, for exa
 ### CSA
 We first designed a 1-bit full adder and used 1-bit full adders and 2to1 MUXes to design a 2-bit CSA. Then we used three 2-bit CSAs, a 4to2 MUX and two 2to1 MUXes to design a 4-bit CSA. 2-bit CSAs were for addition and giving result of the sum and carry out of the inputs. 4to2 MUX was for selecting the highest 2 bit numbers. One of the 2to1 MUXes was for selecting the carry out and the other one was for calculating the overflow (which will be explained in detail below) are for Just in this way, we finally built a 32-bit CSA with 16-bit CSAs and 32to16 MUXes.
 ### Addition and Subtraction
-We used a 64to32 MUX to select whether to do addition or subtraction. The two 32-bit inputs are operand B and (operand B)', the select input is 0 (addtion) or 1 (subtraction), and it is also the carry in of the 32-bit CSA.
+We used a 64to32 MUX to select whether to do addition or subtraction. The two 32-bit inputs were operand B and (operand B)', the select input was 0 (addtion) or 1 (subtraction), which wasalso the carry in of the 32-bit CSA.
 ### Overflow
    
 ## Issues
